@@ -230,6 +230,7 @@ void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector S
             WidgetComp->SetupAttachment(Target->GetRootComponent()); // Attach to the target actor
             WidgetComp->SetWidgetClass(GrapplePointWidget);
             WidgetComp->SetRelativeLocation(FVector::ZeroVector);
+            WidgetComp->SetWorldLocation(SpawnLocation);
             WidgetComp->SetWidgetSpace(EWidgetSpace::Screen); // Use screen space for 2D UI
             WidgetComp->RegisterComponent();
 
