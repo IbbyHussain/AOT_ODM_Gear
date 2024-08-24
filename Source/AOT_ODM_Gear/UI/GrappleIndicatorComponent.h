@@ -18,8 +18,6 @@ private:
 
 	FVector WidgetComponentLocation;
 
-	virtual void OnComponentCreated() override;
-
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
 public:

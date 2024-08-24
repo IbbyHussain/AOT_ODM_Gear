@@ -37,6 +37,7 @@ class UInputMappingContext;
 class UInputAction;
 class AODM_Gear; 
 class UWidgetComponent;
+class UGrappleIndicatorComponent;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
@@ -130,7 +131,7 @@ public:
 	bool GetbIsGrappling() const { return bIsGrappling; }
 
 
-	TMap<AActor*, UWidgetComponent*> GrappleTargetIndicators; // Used in abilities for grappling
+	TMap<AActor*, UGrappleIndicatorComponent*> GrappleTargetIndicators; // Used in abilities for grappling
 
 	AODM_Gear* GetODMGearActor() const { return ODM_Gear; }
 

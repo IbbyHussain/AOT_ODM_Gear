@@ -9,12 +9,10 @@ UGrappleIndicatorComponent::UGrappleIndicatorComponent()
 	WidgetComponentLocation = FVector::ZeroVector;
 }
 
-void UGrappleIndicatorComponent::OnComponentCreated()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Widget created"));
-}
-
 void UGrappleIndicatorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
-	SetWorldLocation(WidgetComponentLocation);
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	//SetWorldLocation(WidgetComponentLocation);
 }
+
