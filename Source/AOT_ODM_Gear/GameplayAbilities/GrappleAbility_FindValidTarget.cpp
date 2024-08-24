@@ -6,7 +6,7 @@
 #include "AOT_ODM_Gear/AOT_ODM_GearCharacter.h"
 #include "Components/WidgetComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
-
+#include "AOT_ODM_Gear/UI/GrappleIndicatorComponent.h"
 #include "AOT_ODM_Gear/ODM_Gear.h"
 
 
@@ -227,9 +227,11 @@ void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector S
 
         if (WidgetComp && GrapplePointWidget)
         {
+
             WidgetComp->SetupAttachment(Target->GetRootComponent()); // Attach to the target actor
             WidgetComp->SetWidgetClass(GrapplePointWidget);
             WidgetComp->SetRelativeLocation(FVector::ZeroVector);
+            //WidgetComp->SetWidgetComponentLocation(SpawnLocation); // Set world location on component tick
             WidgetComp->SetWorldLocation(SpawnLocation);
             WidgetComp->SetWidgetSpace(EWidgetSpace::Screen); // Use screen space for 2D UI
             WidgetComp->RegisterComponent();
