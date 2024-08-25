@@ -8,6 +8,7 @@
 #include "AbilitySystemInterface.h"
 #include "GameplayAbilitySpec.h"
 #include "GameplayAbilities/GameplayAbilityInputs.h"
+#include "AOT_ODM_Gear/AbilityStruct.h"
 #include "AOT_ODM_GearCharacter.generated.h"
 
 USTRUCT()
