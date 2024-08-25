@@ -169,7 +169,7 @@ FVector UGrappleAbility_FindValidTarget::GetClosestPointOnActorCollision(AActor*
 
         PrimitiveComponent->GetClosestPointOnCollision(StartPoint, ClosestPoint);
 
-        DrawDebugSphere(GetWorld(), ClosestPoint, 20.0f, 12, FColor::Green, false, 1.0f);
+        //DrawDebugSphere(GetWorld(), ClosestPoint, 20.0f, 12, FColor::Green, false, 1.0f);
 
         return ClosestPoint;
     }
@@ -188,7 +188,8 @@ void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector S
         FGrappleTargetInfo& GrappleTargetInfo = PlayerCharacter->GrappleTargetIndicators[Target];
         if (GrappleTargetInfo.WidgetComp)
         {
-            GrappleTargetInfo.WidgetComp->SetWorldLocation(SpawnLocation);
+            GrappleTargetInfo.GrappleLocation = SpawnLocation; //useless
+            GrappleTargetInfo.WidgetComp->SetWorldLocation(GrappleTargetInfo.GrappleLocation);
         }
 
         //PlayerCharacter->GrappleTargetIndicators[Target]->SetWorldLocation(SpawnLocation);

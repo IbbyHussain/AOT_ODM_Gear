@@ -62,11 +62,21 @@ void UGrappleAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, c
                 {
                     AActor* GrapleTarget = TargetKeys[0];
 
+                    // Get the location of the widget UI component in world, this will be the grapple point
+                    if (FGrappleTargetInfo* TargetInfo = PlayerCharacter->GrappleTargetIndicators.Find(TargetKeys[0]))
+                    {
+                        FVector GrappleLocation = TargetInfo->WidgetComp->GetComponentLocation();
+
+                        DrawDebugSphere(GetWorld(), GrappleLocation, 50.0f, 12, FColor::Orange, false, 5.0f);
+                    }
+
                     FVector GrappleTargetLocation = GrapleTarget->GetActorLocation();
 
                     // Calculate distance from cables to grapple target
                     float DistanceToLeftCable = (GrappleTargetLocation - LeftCableLocation).Length();
                     float DistanceToRightCable = (GrappleTargetLocation - RightCableLocation).Length();
+
+                    
 
                     // If the left cable is closer to target
                     if(DistanceToLeftCable < DistanceToRightCable)
