@@ -34,9 +34,12 @@ void AODM_Gear::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void AODM_Gear::AttachGrappleCable(UCableComponent* Cable, AActor* AttachedActor)
+void AODM_Gear::AttachGrappleCable(UCableComponent* Cable, AActor* AttachedActor, FVector AttachLocation)
 {
-	Cable->SetAttachEndTo(AttachedActor, NAME_None, FName());
+	//Cable->SetAttachEndTo(AttachedActor, NAME_None, FName());
+
+	//Cable->SetAttachEndTo(nullptr, NAME_None); 
+	//Cable->EndLocation = AttachLocation;
 
 	//RightCableComponent->SetAttachEndTo(AttachedActor, NAME_None, FName());
 	//LeftCableComponent->SetAttachEndTo(AttachedActor, NAME_None, FName());
@@ -44,7 +47,7 @@ void AODM_Gear::AttachGrappleCable(UCableComponent* Cable, AActor* AttachedActor
 
 void AODM_Gear::DetattachGrappleCable(UCableComponent* Cable)
 {
-	Cable->SetAttachEndTo(nullptr, NAME_None, FName());
-	UE_LOG(LogTemp, Warning, TEXT("Detach cable"));
+	//Cable->SetAttachEndTo(nullptr, NAME_None, FName());
+	//UE_LOG(LogTemp, Warning, TEXT("Detach cable"));
 }
 

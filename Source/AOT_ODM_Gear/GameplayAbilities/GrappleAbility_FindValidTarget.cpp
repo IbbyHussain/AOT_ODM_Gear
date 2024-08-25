@@ -104,7 +104,7 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
                 // If the hit object is a grapple target, grapple point will be on the target 
                 if(CameraTraceHitResult.GetActor() == Target)
                 {
-                    UE_LOG(LogTemp, Warning, TEXT("Hit Grapple Actor"));
+                    //UE_LOG(LogTemp, Warning, TEXT("Hit Grapple Actor"));
                     DrawDebugSphere(GetWorld(), CameraTraceHitResult.ImpactPoint, 20.0f, 12, FColor::Green, false, 1.0f);
 
                     SpawnUIIndicator(Target, CameraTraceHitResult.ImpactPoint, NewGrappleTargetIndicators);

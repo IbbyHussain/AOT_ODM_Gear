@@ -86,7 +86,7 @@ private:
 	// Allows the player to grapple to a grapple point
 	bool bCanGrapple;
 
-	AODM_Gear* ODM_Gear;
+	
 
 	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
 	TSubclassOf<AODM_Gear> ODM_GearClass;
@@ -102,7 +102,8 @@ private:
 	bool bMidpointLaunch = true;
 
 public:
-
+	UPROPERTY(BlueprintReadOnly, Category = "ODM_Gear")
+	AODM_Gear* ODM_Gear;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Player Movement")
 	bool bIsGrappling = false;
