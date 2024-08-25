@@ -44,7 +44,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UCableComponent* GetLeftCableComponent() const { return LeftCableComponent; }
 
-	void AttachGrappleCable(UCableComponent* Cable, AActor* AttachedActor, FVector AttachLocation);
+	void AttachGrappleCable(UCableComponent* Cable, AActor* AttachedActor);
 
 	void DetattachGrappleCable(UCableComponent* Cable);
 
