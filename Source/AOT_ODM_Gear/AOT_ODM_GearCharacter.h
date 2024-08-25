@@ -10,10 +10,20 @@
 #include "GameplayAbilities/GameplayAbilityInputs.h"
 #include "AOT_ODM_GearCharacter.generated.h"
 
+class USpringArmComponent;
+class UCameraComponent;
+class UInputMappingContext;
+class UInputAction;
+class AODM_Gear;
+class UWidgetComponent;
+class UGrappleIndicatorComponent;
+struct FInputActionValue;
+
 USTRUCT()
 struct FAbilityInputToInputActionBinding
 {
 	GENERATED_BODY()
+
 
 	UPROPERTY(EditDefaultsOnly)
 	class UInputAction* InputAction;
@@ -31,14 +41,19 @@ struct FAbilityInputBindings
 	TArray<FAbilityInputToInputActionBinding> Bindings;
 };
 
-class USpringArmComponent;
-class UCameraComponent;
-class UInputMappingContext;
-class UInputAction;
-class AODM_Gear; 
-class UWidgetComponent;
-class UGrappleIndicatorComponent;
-struct FInputActionValue;
+//USTRUCT()
+//struct FGrappleTargetInfo
+//{
+//	GENERATED_BODY()
+//
+//public:
+//
+//	UPROPERTY()
+//	UGrappleIndicatorComponent* WidgetComp;
+//
+//	UPROPERTY()
+//	FVector GrappleLocation;
+//};
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -131,7 +146,8 @@ public:
 	bool GetbIsGrappling() const { return bIsGrappling; }
 
 
-	TMap<AActor*, UGrappleIndicatorComponent*> GrappleTargetIndicators; // Used in abilities for grappling
+	TMap<AActor*, FGrappleTargetInfo> GrappleTargetIndicators; // Used in abilities for grappling
+
 
 	AODM_Gear* GetODMGearActor() const { return ODM_Gear; }
 
