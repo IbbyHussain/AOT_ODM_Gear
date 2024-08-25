@@ -16,7 +16,6 @@ public:
 	UPROPERTY()
 	UGrappleIndicatorComponent* WidgetComp;
 
-	// fyf gyh
 	UPROPERTY()
 	FVector GrappleLocation;
 };

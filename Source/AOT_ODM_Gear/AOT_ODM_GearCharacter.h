@@ -132,7 +132,7 @@ public:
 	bool GetbIsGrappling() const { return bIsGrappling; }
 
 
-	TMap<AActor*, UGrappleIndicatorComponent*> GrappleTargetIndicators; // Used in abilities for grappling
+	TMap<AActor*, FGrappleTargetInfo> GrappleTargetIndicators; // Used in abilities for grappling
 
 	AODM_Gear* GetODMGearActor() const { return ODM_Gear; }
 

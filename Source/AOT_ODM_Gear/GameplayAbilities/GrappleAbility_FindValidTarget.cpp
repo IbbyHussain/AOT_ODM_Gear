@@ -8,6 +8,7 @@
 #include "Kismet/KismetSystemLibrary.h"
 #include "AOT_ODM_Gear/UI/GrappleIndicatorComponent.h"
 #include "AOT_ODM_Gear/ODM_Gear.h"
+#include "AOT_ODM_Gear/AbilityStruct.h"
 
 
 UGrappleAbility_FindValidTarget::UGrappleAbility_FindValidTarget()
@@ -85,7 +86,7 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
         }
 
         /* Spawn UI indicator on valid grapple target */
-        TMap<AActor*, UGrappleIndicatorComponent*> NewGrappleTargetIndicators;
+        TMap<AActor*, FGrappleTargetInfo> NewGrappleTargetIndicators;
 
         for (AActor* Target : ValidGrappleTargets)
         {
@@ -128,9 +129,9 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
         // Destroy UI indicators for targets that are no longer valid
         for (auto& IndicatorPair : PlayerCharacter->GrappleTargetIndicators)
         {
-            if (IndicatorPair.Value)
+            if (IndicatorPair.Value.WidgetComp)
             {
-                IndicatorPair.Value->DestroyComponent();
+                IndicatorPair.Value.WidgetComp->DestroyComponent();
             }
         }
 
@@ -176,14 +177,22 @@ FVector UGrappleAbility_FindValidTarget::GetClosestPointOnActorCollision(AActor*
     return StartPoint;
 }
 
-void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector SpawnLocation, TMap<AActor*, UGrappleIndicatorComponent*>& NewGrappleTargetIndicators)
+void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector SpawnLocation, TMap<AActor*, FGrappleTargetInfo>& NewGrappleTargetIndicators)
 {
     /* Spawn UI indicator on valid grapple target */
     if (PlayerCharacter->GrappleTargetIndicators.Contains(Target))
     {
         // If the indicator already exists, just keep it
         NewGrappleTargetIndicators.Add(Target, PlayerCharacter->GrappleTargetIndicators[Target]);
-        PlayerCharacter->GrappleTargetIndicators[Target]->SetWorldLocation(SpawnLocation);
+
+        FGrappleTargetInfo& GrappleTargetInfo = PlayerCharacter->GrappleTargetIndicators[Target];
+        if (GrappleTargetInfo.WidgetComp)
+        {
+            GrappleTargetInfo.WidgetComp->SetWorldLocation(SpawnLocation);
+        }
+
+        //PlayerCharacter->GrappleTargetIndicators[Target]->SetWorldLocation(SpawnLocation);
+
         PlayerCharacter->GrappleTargetIndicators.Remove(Target);
     }
 
@@ -201,7 +210,13 @@ void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector S
             WidgetComp->SetWidgetSpace(EWidgetSpace::Screen); // Use screen space for 2D UI
             WidgetComp->RegisterComponent();
 
-            NewGrappleTargetIndicators.Add(Target, WidgetComp);
+            //NewGrappleTargetIndicators.Add(Target, WidgetComp);
+
+            FGrappleTargetInfo GrappleInfo;
+            GrappleInfo.WidgetComp = WidgetComp;
+            GrappleInfo.GrappleLocation = SpawnLocation;
+
+            NewGrappleTargetIndicators.Add(Target, GrappleInfo);
         }
     }
 }

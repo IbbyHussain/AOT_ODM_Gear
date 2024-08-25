@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
+#include "AOT_ODM_Gear/AbilityStruct.h"
 #include "GrappleAbility_FindValidTarget.generated.h"
 
 class UWidgetComponent;
@@ -45,7 +46,7 @@ private:
 	// Get the closest point on an actor using their collison 
 	FVector GetClosestPointOnActorCollision(AActor* Target, FVector StartPoint);
 
-	void SpawnUIIndicator(AActor* Target, FVector SpawnLocation, TMap<AActor*, UGrappleIndicatorComponent*>& NewGrappleTargetIndicators);
+	void SpawnUIIndicator(AActor* Target, FVector SpawnLocation, TMap<AActor*, FGrappleTargetInfo>& NewGrappleTargetIndicators);
 
 public:
 
