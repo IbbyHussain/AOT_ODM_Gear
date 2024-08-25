@@ -14,6 +14,8 @@ void UGrappleAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, c
     {
         if(PlayerCharacter->GetbCanGrapple())
         {
+            //UE_LOG(LogTemp, Warning, TEXT("Valid Grapple Target, Grapple towards target"));
+
             // valid targets
             if (PlayerCharacter->GrappleTargetIndicators.Num() > 0)
             {
