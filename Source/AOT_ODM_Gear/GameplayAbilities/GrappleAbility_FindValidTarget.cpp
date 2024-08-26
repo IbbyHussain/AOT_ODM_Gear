@@ -186,16 +186,15 @@ void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector S
     if (PlayerCharacter->GrappleTargetIndicators.Contains(Target))
     {
         // If the indicator already exists, just keep it
-        NewGrappleTargetIndicators.Add(Target, PlayerCharacter->GrappleTargetIndicators[Target]);
 
         FGrappleTargetInfo& GrappleTargetInfo = PlayerCharacter->GrappleTargetIndicators[Target];
         if (GrappleTargetInfo.WidgetComp)
         {
             GrappleTargetInfo.GrappleLocation = SpawnLocation; //useless
             GrappleTargetInfo.WidgetComp->SetWorldLocation(GrappleTargetInfo.GrappleLocation);
-        }
 
-        //PlayerCharacter->GrappleTargetIndicators[Target]->SetWorldLocation(SpawnLocation);
+            NewGrappleTargetIndicators.Add(Target, PlayerCharacter->GrappleTargetIndicators[Target]);
+        }
 
         PlayerCharacter->GrappleTargetIndicators.Remove(Target);
     }
@@ -210,15 +209,15 @@ void UGrappleAbility_FindValidTarget::SpawnUIIndicator(AActor* Target, FVector S
             WidgetComp->SetupAttachment(Target->GetRootComponent()); // Attach to the target actor
             WidgetComp->SetWidgetClass(GrapplePointWidget);
             WidgetComp->SetRelativeLocation(FVector::ZeroVector);
-            WidgetComp->SetWorldLocation(SpawnLocation);
-            WidgetComp->SetWidgetSpace(EWidgetSpace::Screen); // Use screen space for 2D UI
-            WidgetComp->RegisterComponent();
-
-            //NewGrappleTargetIndicators.Add(Target, WidgetComp);
 
             FGrappleTargetInfo GrappleInfo;
             GrappleInfo.WidgetComp = WidgetComp;
             GrappleInfo.GrappleLocation = SpawnLocation;
+
+            WidgetComp->SetWorldLocation(GrappleInfo.GrappleLocation);
+
+            WidgetComp->SetWidgetSpace(EWidgetSpace::Screen); // Use screen space for 2D UI
+            WidgetComp->RegisterComponent();
 
             NewGrappleTargetIndicators.Add(Target, GrappleInfo);
         }

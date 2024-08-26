@@ -103,19 +103,10 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	
-
-
-
-
-
-
-	
 	if (bShouldActivateGrappleAbility)
 	{
 		AbilitySystemComp->TryActivateAbilityByClass(GrappleAbilityFindValidTarget);
 	}
-
 
 	if(bIsGrappling)
 	{
@@ -127,13 +118,12 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 			// If one valid target and one cable has been attached, use the target as an anchor point to allow the player to swing (more air control)
 			if(TargetKeys.Num() == 1)
 			{
-				UE_LOG(LogTemp, Warning, TEXT("1 target"));
 				AActor* FirstGrappleTarget = TargetKeys[0];
-				//BP_AddForce(FirstGrappleTarget);
 
 				// Get the grapple info struct 
 				if (FGrappleTargetInfo* TargetInfo = GrappleTargetIndicators.Find(TargetKeys[0]))
 				{
+					// Add force while grappling 
 					BP_AddForce_Location(TargetInfo->WidgetComp->GetComponentLocation());
 				}
 			}
