@@ -129,7 +129,13 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 			{
 				UE_LOG(LogTemp, Warning, TEXT("1 target"));
 				AActor* FirstGrappleTarget = TargetKeys[0];
-				BP_AddForce(FirstGrappleTarget);
+				//BP_AddForce(FirstGrappleTarget);
+
+				// Get the grapple info struct 
+				if (FGrappleTargetInfo* TargetInfo = GrappleTargetIndicators.Find(TargetKeys[0]))
+				{
+					BP_AddForce_Location(TargetInfo->WidgetComp->GetComponentLocation());
+				}
 			}
 
 			// If two valid grapple points, the player will use them as anchor points to launch themselves forwards 

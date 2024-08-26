@@ -123,6 +123,9 @@ public:
 	void BP_AddForce(AActor* Target); //temp
 
 	UFUNCTION(BlueprintImplementableEvent)
+	void BP_AddForce_Location(FVector Location); //temp
+
+	UFUNCTION(BlueprintImplementableEvent)
 	void BP_PlayMontage(); //temp
 
 	UFUNCTION(BlueprintImplementableEvent)
