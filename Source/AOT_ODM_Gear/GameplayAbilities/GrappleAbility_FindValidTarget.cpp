@@ -96,7 +96,7 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
             FCollisionQueryParams CameraTraceQueryParams;
 
             bool bHit = GetWorld()->LineTraceSingleByChannel(CameraTraceHitResult, CameraLocation, CameraTraceEnd, ECC_Visibility, CameraTraceQueryParams);
-            //DrawDebugLine(GetWorld(), CameraLocation, CameraTraceEnd, FColor::Red, false, 1.0f, 0.0f, 1.0f);
+            DrawDebugLine(GetWorld(), CameraLocation, CameraTraceEnd, FColor::Red, false, 1.0f, 0.0f, 1.0f);
 
             // If the camera trace hits an object
             if(bHit)

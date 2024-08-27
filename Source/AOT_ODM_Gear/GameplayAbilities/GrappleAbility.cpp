@@ -76,7 +76,7 @@ void UGrappleAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, c
                     FGrappleTargetInfo& TargetInfo = PlayerCharacter->GrappleTargetIndicators[GrapleTarget];
                     
 					// Get the UI indciator world location (Grapple point)
-					FVector GrapplePointLocation = TargetInfo.GrappleLocation;
+					FVector GrapplePointLocation = TargetInfo.GrappleLocation; // Can just get the world location of the UI comp
 
 					SpawnFirstGrapplePointAttachActor(GrapplePointLocation);
 
