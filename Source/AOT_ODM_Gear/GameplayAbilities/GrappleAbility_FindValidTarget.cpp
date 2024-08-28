@@ -64,10 +64,22 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
         {
             FVector GrappleLocation = GetClosestPointOnActorCollision(Target, CameraLocation);
 
+            // Calculate the distance between the camera and the grapple location
+            float DistanceToTarget = FVector::Dist(CameraLocation, GrappleLocation);
+
+            // Define the minimum and maximum allowed angles
+            float MinGrappleAngle = 0.0f;  // This should be the minimum angle when very close
+            float MaxGrappleAngleDistance = 1000.0f;  // The distance at which MaxGrappleAngle is fully applied
+
+            // Interpolate MaxGrappleAngle based on the distance
+            float AdjustedGrappleAngle = FMath::Lerp(MinGrappleAngle, MaxGrappleAngle, DistanceToTarget / MaxGrappleAngleDistance);
+
             FVector DirectionToTarget = (GrappleLocation - CameraLocation).GetSafeNormal();
             float DotProduct = FVector::DotProduct(PlayerCharacter->GetActorForwardVector(), DirectionToTarget);
 
-            if (DotProduct > MaxGrappleAngle)
+            UE_LOG(LogTemp, Warning, TEXT("MAX GRAPPLE ANGLE: %f"), AdjustedGrappleAngle);
+
+            if (DotProduct > AdjustedGrappleAngle)
             {
                 ValidGrappleTargets.Add(Target);
             }
