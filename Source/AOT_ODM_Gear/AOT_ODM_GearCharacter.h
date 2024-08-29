@@ -78,22 +78,16 @@ class AAOT_ODM_GearCharacter : public ACharacter, public IAbilitySystemInterface
 
 private:
 
-
-
 	// in future will be tied to picking up or equipping grapple ability from loadout system
 	bool bShouldActivateGrappleAbility;
 
 	// Allows the player to grapple to a grapple point
 	bool bCanGrapple;
 
-	
-
 	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
 	TSubclassOf<AODM_Gear> ODM_GearClass;
 
 	FName ODM_Gear_Socket;
-
-	
 
 	void StartGrapple();
 
@@ -101,7 +95,15 @@ private:
 
 	bool bMidpointLaunch = true;
 
+	// The box comp will check if the player overlaps a valid grapple target
+	UPROPERTY(EditDefaultsOnly, Category ="ODM_Gear")
+	UBoxComponent* GrappleTargetsBoxComp;
+
 public:
+
+	// Get overlapping actors
+	TArray<AActor*> GetGrappleBoxCompOverlappingActors();
+
 	UPROPERTY(BlueprintReadOnly, Category = "ODM_Gear")
 	AODM_Gear* ODM_Gear;
 

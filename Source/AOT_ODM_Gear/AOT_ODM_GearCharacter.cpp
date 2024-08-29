@@ -65,6 +65,10 @@ AAOT_ODM_GearCharacter::AAOT_ODM_GearCharacter()
 	//smc = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("smc"));
 	//smc->SetupAttachment(FollowCamera);
 
+	GrappleTargetsBoxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("GrappleBoxComp"));
+	GrappleTargetsBoxComp->SetupAttachment(FollowCamera);
+	GrappleTargetsBoxComp->SetGenerateOverlapEvents(true);
+
 	bShouldActivateGrappleAbility = true;
 
 	bCanGrapple = false;
@@ -327,6 +331,14 @@ void AAOT_ODM_GearCharacter::StopGrapple()
 
 		//GetCharacterMovement()->GravityScale = 1.0f;
 	}
+}
+
+TArray<AActor*> AAOT_ODM_GearCharacter::GetGrappleBoxCompOverlappingActors()
+{
+	TArray<AActor*> OverlappingActors;
+	GrappleTargetsBoxComp->GetOverlappingActors(OverlappingActors);
+
+	return OverlappingActors;
 }
 
 void AAOT_ODM_GearCharacter::SetupInitialAbilitiesAndEffects()

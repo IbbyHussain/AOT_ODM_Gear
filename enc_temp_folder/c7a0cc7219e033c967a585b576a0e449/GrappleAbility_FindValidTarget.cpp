@@ -28,6 +28,7 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
 
         TArray<AActor*> AllGrappleTargets;
 
+
         AllTargets = PlayerCharacter->GetGrappleBoxCompOverlappingActors();
 
         for(auto Target : AllTargets)
@@ -38,6 +39,31 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
             }
         }
    
+
+        /* Find the best two grapple points (This is based on distance and angle from player) */
+   //     TArray<AActor*> ValidGrappleTargets;
+
+   //     // @TODO -> have a half
+   //     for (AActor* Target : AllGrappleTargets)
+   //     {
+   //         FVector GrappleLocation = GetClosestPointOnActorCollision(Target, CameraLocation);
+
+			//FVector DirectionToTarget = (GrappleLocation - CameraLocation).GetSafeNormal();
+			//float DotProduct = FVector::DotProduct(PlayerCharacter->GetActorForwardVector(), DirectionToTarget);
+
+			//if (DotProduct > MaxGrappleAngle)
+			//{
+			//	ValidGrappleTargets.Add(Target);
+			//}
+
+   //         else
+   //         {
+   //             ValidGrappleTargets.Add(Target);
+   //         }
+   //     }
+
+        
+
         FVector CameraLocation;
         FRotator CameraRotation;
         PlayerController->GetPlayerViewPoint(CameraLocation, CameraRotation);
@@ -83,11 +109,20 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
                 if(CameraTraceHitResult.GetActor() == Target)
                 {
                     GrappleLocation = CameraTraceHitResult.ImpactPoint;
+
+                    //SpawnUIIndicator(Target, CameraTraceHitResult.ImpactPoint, NewGrappleTargetIndicators);
+
+                    //DrawDebugSphere(GetWorld(), CameraTraceHitResult.ImpactPoint, 20.0f, 12, FColor::Green, false, 1.0f);
                 }
 
                 // If the hit object is NOT a grapple target, then use the impact point (of trace) to get the closest point to the grapple target and this will be be grapple point
                 else
                 {
+                    //FVector ClosestPoint = GetClosestPointOnActorCollision(Target, CameraTraceHitResult.ImpactPoint);
+                    //SpawnUIIndicator(Target, ClosestPoint, NewGrappleTargetIndicators);
+
+                    //DrawDebugSphere(GetWorld(), ClosestPoint, 20.0f, 12, FColor::Red, false, 1.0f);
+
                     GrappleLocation = GetClosestPointOnActorCollision(Target, CameraTraceHitResult.ImpactPoint);
                 }
             }
@@ -95,6 +130,11 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
             // If the camera trace did not hit anything then use endpoint of trace to get the closest point to the grapple target and this will be be grapple point
             else
             {
+                //FVector ClosestPoint = GetClosestPointOnActorCollision(Target, CameraTraceEnd);
+               // SpawnUIIndicator(Target, ClosestPoint, NewGrappleTargetIndicators);
+
+                //DrawDebugSphere(GetWorld(), ClosestPoint, 20.0f, 12, FColor::Red, false, 1.0f);
+
                 GrappleLocation = GetClosestPointOnActorCollision(Target, CameraTraceEnd);
             }
 
