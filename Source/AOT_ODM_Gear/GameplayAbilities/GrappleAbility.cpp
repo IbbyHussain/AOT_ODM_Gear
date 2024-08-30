@@ -14,6 +14,7 @@ void UGrappleAbility::SpawnFirstGrapplePointAttachActor(FVector SpawnLocation)
     FirstGrapplePointAttachActor = GetWorld()->SpawnActor<AActor>(FirstGrapplePointAttachActorClass, SpawnLocation, FRotator::ZeroRotator, SpawnParams);
 }
 
+//@TODO make it so that the length width and height can be changed using variables 
 void UGrappleAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 {
 	//UE_LOG(LogTemp, Warning, TEXT("Grapple ability activated"));

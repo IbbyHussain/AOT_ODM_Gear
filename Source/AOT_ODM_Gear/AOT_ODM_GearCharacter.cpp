@@ -69,11 +69,18 @@ AAOT_ODM_GearCharacter::AAOT_ODM_GearCharacter()
 	GrappleTargetsBoxComp->SetupAttachment(FollowCamera);
 	GrappleTargetsBoxComp->SetGenerateOverlapEvents(true);
 
+	// Create timeline for camera transition 
+	CameraTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("Camera Timeline Component"));
+	CameraInterpFunction.BindUFunction(this, FName("CameraTimelineFloatReturn")); // bind UFunction
+
 	bShouldActivateGrappleAbility = true;
 
 	bCanGrapple = false;
 
 	ODM_Gear_Socket = "ODM_Socket";
+
+	DefaultFOV = FollowCamera->FieldOfView;
+	GrapplingFOV = 145.0f;
 }
 
 void AAOT_ODM_GearCharacter::BeginPlay()
@@ -99,6 +106,13 @@ void AAOT_ODM_GearCharacter::BeginPlay()
 	{
 		FAttachmentTransformRules TransformRules = FAttachmentTransformRules::SnapToTargetIncludingScale;
 		ODM_Gear->AttachToComponent(GetMesh(), TransformRules, ODM_Gear_Socket);
+	}
+
+	// Camera timeline, setup defaults
+	if(FCameraCurve)
+	{
+		CameraTimeline->AddInterpFloat(FCameraCurve, CameraInterpFunction, FName("Alpha"));
+		CameraTimeline->SetLooping(false);
 	}
 
 }
@@ -281,6 +295,8 @@ void AAOT_ODM_GearCharacter::StartGrapple()
 
 		UE_LOG(LogTemp, Warning, TEXT("Grappling"));
 
+		CameraTimeline->PlayFromStart();
+
 		//GetCharacterMovement()->GravityScale = 0.2f;
 
 		
@@ -316,6 +332,8 @@ void AAOT_ODM_GearCharacter::StopGrapple()
 	if(bIsGrappling)
 	{
 		BP_StopMontage();
+
+		CameraTimeline->Reverse();
 
 		GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Falling);
 		bIsGrappling = false;
@@ -383,3 +401,8 @@ void AAOT_ODM_GearCharacter::AbilityInputBindingReleasedHandler(EAbilityInput ab
 }
 
 #pragma endregion
+
+void AAOT_ODM_GearCharacter::CameraTimelineFloatReturn(float Value)
+{
+	FollowCamera->SetFieldOfView(FMath::Lerp(DefaultFOV, GrapplingFOV, Value));
+}

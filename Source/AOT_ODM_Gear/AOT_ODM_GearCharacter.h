@@ -9,6 +9,7 @@
 #include "GameplayAbilitySpec.h"
 #include "GameplayAbilities/GameplayAbilityInputs.h"
 #include "AOT_ODM_Gear/AbilityStruct.h"
+#include "Components/TimelineComponent.h"
 #include "AOT_ODM_GearCharacter.generated.h"
 
 USTRUCT()
@@ -98,6 +99,28 @@ private:
 	// The box comp will check if the player overlaps a valid grapple target
 	UPROPERTY(EditDefaultsOnly, Category ="ODM_Gear")
 	UBoxComponent* GrappleTargetsBoxComp;
+
+#pragma region Camera Transition 
+
+	float DefaultFOV;
+
+	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
+	float GrapplingFOV;
+
+	UPROPERTY(EditAnywhere, Category = "Timeline")
+	UCurveFloat* FCameraCurve;
+
+	UTimelineComponent* CameraTimeline;
+
+	FOnTimelineFloat CameraInterpFunction{};
+
+	UFUNCTION()
+	void CameraTimelineFloatReturn(float Value);
+
+
+
+
+#pragma endregion
 
 public:
 
