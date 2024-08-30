@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1703472526	Grapple			\Default Work Unit\Grapple	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	829410983	WindLoop	C:\Users\Robert\Documents\GitHub\HH\AOT_ODM_Gear\AOT_ODM_Gear_WwiseProject\.cache\Mac\SFX\WindLoop_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\WindLoop		3880896
+

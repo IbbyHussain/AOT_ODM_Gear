@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="AOT_ODM_Gear_WwiseProject" GUID="{26A5095F-F0E5-40AD-BE85-B5CC8D1D2C73}" Generator="2023.1.6.8555"/>
+	<CacheRoot>../../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Windows" GUID="{AB87CE17-DD66-41E4-8DA9-7291C2B50430}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="."/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{3FE7A50A-6F99-4E3C-B637-58A7BF1D80FC}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{56610BC1-002B-CC9E-0AA4-4B8AAEB9EAFF}</FileHash>
+</ProjectInfo>

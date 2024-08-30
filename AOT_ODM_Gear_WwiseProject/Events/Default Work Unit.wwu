@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{83A35196-D39F-4C1D-ABDF-D11007452032}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{83A35196-D39F-4C1D-ABDF-D11007452032}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Grapple" ID="{EABFBB9A-B445-419A-A420-2DD30DF3A10B}">
+					<ChildrenList>
+						<Action Name="" ID="{FAA8F0CC-A028-4FBC-821F-F4B1E9FD0AAB}" ShortID="822824085">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WindLoop" ID="{C2843771-0297-4A29-B4FC-99FC5FA21266}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A300AFD0-0DE2-4A5D-8E49-909D189B785E}" ShortID="332361649">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GrappleZipLoop" ID="{13DB7512-A6DA-46F6-8D38-790705B619F7}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7740AF09-DD1A-4123-8AF7-403D29817558}" ShortID="855546506">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GrappleZipLoop2" ID="{6DCF5BD5-DF01-4A63-9238-C4F656DDC8FB}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BASS" ID="{C40154B6-2D70-405E-981B-3EF817062BAD}">
+					<ChildrenList>
+						<Action Name="" ID="{9B94CEA7-10A6-45E4-A6C2-3A17B0FECDCD}" ShortID="712577572">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BASS" ID="{067AA4BA-1F79-4D5E-B945-3792AEB2C65E}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{71AFAE85-17E8-4A64-8058-5A1589C5D9BD}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{71AFAE85-17E8-4A64-8058-5A1589C5D9BD}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="GrappleSpeed" ID="{FED5E64F-DADF-47B6-AFAE-ED13B06C400E}">
+					<PropertyList>
+						<Property Name="Max" Type="Real64" Value="3500"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="33"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="73"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1291433344	BASS			\Default Work Unit\BASS	
+	1703472526	Grapple			\Default Work Unit\Grapple	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3922339807	GrappleSpeed			\Default Work Unit\GrappleSpeed	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	481454921	GrappleZipLoop2	C:\Users\Robert\Documents\GitHub\HH\AOT_ODM_Gear\AOT_ODM_Gear_WwiseProject\.cache\Windows\SFX\GrappleZipLoop2_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrappleZipLoop2		1256946
+	675338252	BASS	C:\Users\Robert\Documents\GitHub\HH\AOT_ODM_Gear\AOT_ODM_Gear_WwiseProject\.cache\Windows\SFX\BassGuitarZips_SlinkySwings_42B4734B.wem		\Actor-Mixer Hierarchy\Default Work Unit\BASS		66549920
+	829410983	WindLoop	C:\Users\Robert\Documents\GitHub\HH\AOT_ODM_Gear\AOT_ODM_Gear_WwiseProject\.cache\Windows\SFX\WindLoop_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\WindLoop		3880896
+	882002448	GrappleZipLoop	C:\Users\Robert\Documents\GitHub\HH\AOT_ODM_Gear\AOT_ODM_Gear_WwiseProject\.cache\Windows\SFX\GrappleZipLoop_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\GrappleZipLoop		303284
+

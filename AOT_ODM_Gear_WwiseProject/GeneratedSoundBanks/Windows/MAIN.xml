@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<SoundBanks>
+		<SoundBank Id="3161908922" Type="User" GUID="{7AD7ACCE-D85A-47C3-91F6-7E6434110932}" Language="SFX" Hash="{15365AAE-EAF6-97E3-81C6-29A80718583A}">
+			<ObjectPath>\SoundBanks\Default Work Unit\MAIN</ObjectPath>
+			<ShortName>MAIN</ShortName>
+			<Path>MAIN.bnk</Path>
+			<Media>
+				<File Id="481454921" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GrappleZipLoop2.wav</ShortName>
+					<CachePath>SFX/GrappleZipLoop2_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="675338252" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BassGuitarZips_SlinkySwings.WAV</ShortName>
+					<CachePath>SFX/BassGuitarZips_SlinkySwings_42B4734B.wem</CachePath>
+				</File>
+				<File Id="829410983" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WindLoop.wav</ShortName>
+					<CachePath>SFX/WindLoop_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="882002448" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GrappleZipLoop.wav</ShortName>
+					<CachePath>SFX/GrappleZipLoop_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1291433344" Name="BASS" ObjectPath="\Events\Default Work Unit\BASS" GUID="{C40154B6-2D70-405E-981B-3EF817062BAD}" MaxAttenuation="100" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="675338252"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1703472526" Name="Grapple" ObjectPath="\Events\Default Work Unit\Grapple" GUID="{EABFBB9A-B445-419A-A420-2DD30DF3A10B}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="481454921"/>
+						<MediaRef Id="829410983"/>
+						<MediaRef Id="882002448"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3922339807" Name="GrappleSpeed" ObjectPath="\Game Parameters\Default Work Unit\GrappleSpeed" GUID="{FED5E64F-DADF-47B6-AFAE-ED13B06C400E}"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{CD0C797E-07F4-22AA-FF91-6B3433EB3D5B}</FileHash>
+</SoundBanksInfo>

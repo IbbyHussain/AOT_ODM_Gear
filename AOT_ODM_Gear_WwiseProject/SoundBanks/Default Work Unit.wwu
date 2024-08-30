@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EBC76CFA-8E3F-4E26-94D5-6E13D2DBE678}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{EBC76CFA-8E3F-4E26-94D5-6E13D2DBE678}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="MAIN" ID="{7AD7ACCE-D85A-47C3-91F6-7E6434110932}">
+					<ObjectInclusionList>
+						<ObjectRef Name="BASS" ID="{C40154B6-2D70-405E-981B-3EF817062BAD}" WorkUnitID="{83A35196-D39F-4C1D-ABDF-D11007452032}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Grapple" ID="{EABFBB9A-B445-419A-A420-2DD30DF3A10B}" WorkUnitID="{83A35196-D39F-4C1D-ABDF-D11007452032}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GrappleZipLoop" ID="{13DB7512-A6DA-46F6-8D38-790705B619F7}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="WindLoop" ID="{C2843771-0297-4A29-B4FC-99FC5FA21266}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GrappleZipLoop2" ID="{6DCF5BD5-DF01-4A63-9238-C4F656DDC8FB}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BASS" ID="{067AA4BA-1F79-4D5E-B945-3792AEB2C65E}" WorkUnitID="{7A37CB63-7392-4091-BCD7-27444ABAC741}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
