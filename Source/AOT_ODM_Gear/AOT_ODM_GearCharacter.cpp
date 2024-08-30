@@ -81,6 +81,9 @@ AAOT_ODM_GearCharacter::AAOT_ODM_GearCharacter()
 
 	DefaultFOV = FollowCamera->FieldOfView;
 	GrapplingFOV = 145.0f;
+
+	DefaultCameraArmLength = CameraBoom->TargetArmLength;
+	GrappleCameraArmLength = 800.0f;
 }
 
 void AAOT_ODM_GearCharacter::BeginPlay()
@@ -405,4 +408,5 @@ void AAOT_ODM_GearCharacter::AbilityInputBindingReleasedHandler(EAbilityInput ab
 void AAOT_ODM_GearCharacter::CameraTimelineFloatReturn(float Value)
 {
 	FollowCamera->SetFieldOfView(FMath::Lerp(DefaultFOV, GrapplingFOV, Value));
+	CameraBoom->TargetArmLength = FMath::Lerp(DefaultCameraArmLength, GrappleCameraArmLength, Value);
 }

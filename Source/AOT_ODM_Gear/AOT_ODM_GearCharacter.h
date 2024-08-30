@@ -100,6 +100,11 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category ="ODM_Gear")
 	UBoxComponent* GrappleTargetsBoxComp;
 
+	float DefaultCameraArmLength;
+
+	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
+	float GrappleCameraArmLength; 
+
 #pragma region Camera Transition 
 
 	float DefaultFOV;
