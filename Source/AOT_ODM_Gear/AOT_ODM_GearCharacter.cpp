@@ -129,6 +129,7 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 		AbilitySystemComp->TryActivateAbilityByClass(GrappleAbilityFindValidTarget);
 	}
 
+	// Launch logic for grapple system
 	if(bIsGrappling)
 	{
 		if (GrappleTargetIndicators.Num() > 0)
@@ -146,6 +147,16 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 				{
 					// Add force while grappling 
 					BP_AddForce_Location(TargetInfo->WidgetComp->GetComponentLocation());
+
+					FVector UnitDirection = (TargetInfo->WidgetComp->GetComponentLocation() - GetActorLocation()).GetSafeNormal();
+
+					FVector RightVector = (GetActorRightVector() * MoveRight) * 0.1;
+
+					FVector Normalise = (UnitDirection + RightVector).GetSafeNormal();
+
+					GetCharacterMovement()->AddForce(Normalise * 200000.0);
+					
+					
 				}
 			}
 
@@ -183,7 +194,6 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 					{
 						bMidpointLaunch = false;
 					}
-
 				}
 				
 				else
@@ -303,7 +313,6 @@ void AAOT_ODM_GearCharacter::StartGrapple()
 
 		CameraTimeline->PlayFromStart();
 
-		//GetCharacterMovement()->GravityScale = 0.2f;
 
 		
 
@@ -352,7 +361,6 @@ void AAOT_ODM_GearCharacter::StopGrapple()
 
 		UE_LOG(LogTemp, Error, TEXT("Grappling FINISHED"));
 
-		//GetCharacterMovement()->GravityScale = 1.0f;
 	}
 }
 
