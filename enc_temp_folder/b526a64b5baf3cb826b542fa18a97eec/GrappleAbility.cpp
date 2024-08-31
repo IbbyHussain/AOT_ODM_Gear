@@ -93,7 +93,7 @@ void UGrappleAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, c
                         float DistanceToLeftCable = (GrapplePointLocation - LeftCableLocation).Length();
                         float DistanceToRightCable = (GrapplePointLocation - RightCableLocation).Length();
 
-                        // If the left cable is closer to target, use the left cable
+                        // If the left cable is closer to target
                         if (DistanceToLeftCable < DistanceToRightCable)
                         {
                             PlayerCharacter->GetODMGearActor()->AttachGrappleCable(PlayerCharacter->GetODMGearActor()->GetLeftCableComponent(), FirstGrapplePointAttachActor);

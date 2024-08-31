@@ -85,6 +85,9 @@ private:
 	// Allows the player to grapple to a grapple point
 	bool bCanGrapple;
 
+	// If the player is directly looking at one target use two cables
+	bool bIsLookingAtTarget;
+
 	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
 	TSubclassOf<AODM_Gear> ODM_GearClass;
 
@@ -173,6 +176,10 @@ public:
 	void SetbCanGrapple(bool NewValue) { bCanGrapple = NewValue; }
 
 	bool GetbCanGrapple() const { return bCanGrapple; }
+
+	void SetbIsLookingAtTarget(bool NewValue) { bIsLookingAtTarget = NewValue; }
+
+	bool GetbIsLookingAtTarget() const { return bIsLookingAtTarget; }
 
 	UPROPERTY(EditDefaultsOnly, Category = "Abilities")
 	TSubclassOf<UGameplayAbility> GrappleAbilityFindValidTarget;

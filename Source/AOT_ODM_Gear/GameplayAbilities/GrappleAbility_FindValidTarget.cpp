@@ -83,12 +83,14 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
                 if(CameraTraceHitResult.GetActor() == Target)
                 {
                     GrappleLocation = CameraTraceHitResult.ImpactPoint;
+                    PlayerCharacter->SetbIsLookingAtTarget(true);
                 }
 
                 // If the hit object is NOT a grapple target, then use the impact point (of trace) to get the closest point to the grapple target and this will be be grapple point
                 else
                 {
                     GrappleLocation = GetClosestPointOnActorCollision(Target, CameraTraceHitResult.ImpactPoint);
+                    PlayerCharacter->SetbIsLookingAtTarget(false);
                 }
             }
 
@@ -96,6 +98,7 @@ void UGrappleAbility_FindValidTarget::PerformSphereTrace()
             else
             {
                 GrappleLocation = GetClosestPointOnActorCollision(Target, CameraTraceEnd);
+                PlayerCharacter->SetbIsLookingAtTarget(false);
             }
 
             SpawnUIIndicator(Target, GrappleLocation, NewGrappleTargetIndicators);

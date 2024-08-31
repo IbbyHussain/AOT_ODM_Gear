@@ -344,7 +344,6 @@ void AAOT_ODM_GearCharacter::StopGrapple()
 		//@TODO check which cable is attached and detach that cable
 		ODM_Gear->DetattachGrappleCable(ODM_Gear->GetLeftCableComponent());
 		ODM_Gear->DetattachGrappleCable(ODM_Gear->GetRightCableComponent());
-		ODM_Gear->bRightCableAttached = false;
 
 		bMidpointLaunch = true;
 

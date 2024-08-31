@@ -48,6 +48,5 @@ public:
 
 	void DetattachGrappleCable(UCableComponent* Cable);
 
-	bool bRightCableAttached = false;
 
 };
