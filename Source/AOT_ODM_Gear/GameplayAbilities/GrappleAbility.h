@@ -19,9 +19,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "ODM Ability")
 	TSubclassOf<AActor> FirstGrapplePointAttachActorClass;
 
-	AActor* FirstGrapplePointAttachActor;
-
-	void SpawnFirstGrapplePointAttachActor(FVector SpawnLocation);
+	AActor* SpawnFirstGrapplePointAttachActor(FVector SpawnLocation);
 
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
 };

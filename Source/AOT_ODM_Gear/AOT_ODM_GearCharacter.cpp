@@ -157,8 +157,11 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 				AActor* FirstGrappleTarget = TargetKeys[0];
 				AActor* SecondGrappleTarget = TargetKeys[1];
 
+				FGrappleTargetInfo& FirstTargetInfo = GrappleTargetIndicators[FirstGrappleTarget];
+				FGrappleTargetInfo& SecondTargetInfo = GrappleTargetIndicators[SecondGrappleTarget];
+
 				// Calculate the midpoint of the two targets 
-				FVector Midpoint = (FirstGrappleTarget->GetActorLocation() + SecondGrappleTarget->GetActorLocation()) / 2.0f;
+				FVector Midpoint = (FirstTargetInfo.GrappleLocation + SecondTargetInfo.GrappleLocation) / 2.0f;
 
 				// Calculate the distance from the player to the midpoint
 				float DistanceToMidpoint = FVector::Dist(GetActorLocation(), Midpoint);
