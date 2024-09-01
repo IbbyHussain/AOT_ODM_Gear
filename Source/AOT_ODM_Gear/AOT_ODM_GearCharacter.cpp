@@ -84,6 +84,8 @@ AAOT_ODM_GearCharacter::AAOT_ODM_GearCharacter()
 
 	DefaultCameraArmLength = CameraBoom->TargetArmLength;
 	GrappleCameraArmLength = 800.0f;
+
+	GrappleLaunchForce = 200000.0;
 }
 
 void AAOT_ODM_GearCharacter::BeginPlay()
@@ -154,7 +156,7 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 
 					FVector Normalise = (UnitDirection + RightVector).GetSafeNormal();
 
-					GetCharacterMovement()->AddForce(Normalise * 200000.0);
+					GetCharacterMovement()->AddForce(Normalise * GrappleLaunchForce);
 					
 					
 				}

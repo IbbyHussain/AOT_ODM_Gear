@@ -89,6 +89,9 @@ private:
 	bool bIsLookingAtTarget;
 
 	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
+	float GrappleLaunchForce;
+
+	UPROPERTY(EditDefaultsOnly, Category = "ODM_Gear")
 	TSubclassOf<AODM_Gear> ODM_GearClass;
 
 	FName ODM_Gear_Socket;
