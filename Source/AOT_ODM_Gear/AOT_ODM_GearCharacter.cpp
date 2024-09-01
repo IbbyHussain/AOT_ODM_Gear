@@ -147,7 +147,7 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 				// Get the grapple info struct 
 				if (FGrappleTargetInfo* TargetInfo = GrappleTargetIndicators.Find(TargetKeys[0]))
 				{
-					// Add force while grappling 
+					//  Add force while grappling 
 					BP_AddForce_Location(TargetInfo->WidgetComp->GetComponentLocation());
 
 					FVector UnitDirection = (TargetInfo->WidgetComp->GetComponentLocation() - GetActorLocation()).GetSafeNormal();
@@ -157,6 +157,22 @@ void AAOT_ODM_GearCharacter::Tick(float DeltaTime)
 					FVector Normalise = (UnitDirection + RightVector).GetSafeNormal();
 
 					GetCharacterMovement()->AddForce(Normalise * GrappleLaunchForce);
+
+					
+
+					//FVector UnitDirection = (TargetInfo->WidgetComp->GetComponentLocation() - GetActorLocation()).GetSafeNormal();
+					//FVector RightVector = (GetActorRightVector() * MoveRight) * 0.1;
+					//FVector Normalise = (UnitDirection + RightVector).GetSafeNormal();
+
+					//FVector GrappleForce = Normalise * GrappleLaunchForce;
+
+					//// Adjust input force based on character's current velocity
+					//FVector InputForce = GetCharacterMovement()->Velocity * 0.5f;
+
+					//// Combine input force with the grapple force
+					//FVector TotalForce = GrappleForce + InputForce;
+
+					//GetCharacterMovement()->AddForce(TotalForce);
 					
 					
 				}
