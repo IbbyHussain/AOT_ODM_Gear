@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{C040A414-05FE-B4D3-B5A6-A2A41546907F}",
+    "Hash": "{B2E3D944-87C8-02F3-FB5F-3146084E4944}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -44,14 +44,48 @@
     ],
     "GameParameters": [
      {
+      "Id": "58042747",
+      "Name": "FallSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\FallSpeed",
+      "GUID": "{AC8799C0-709A-4A93-AD7E-D6320FE11CBF}"
+     },
+     {
       "Id": "3922339807",
       "Name": "GrappleSpeed",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\GrappleSpeed",
       "GUID": "{FED5E64F-DADF-47B6-AFAE-ED13B06C400E}"
      }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1579702610",
+      "Name": "IsFalling",
+      "ObjectPath": "\\States\\Default Work Unit\\IsFalling",
+      "GUID": "{14283B8E-747D-431C-83E4-D57EFD591D3F}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\IsFalling\\None",
+        "GUID": "{858BB978-2200-478F-83D9-2F04763123F5}"
+       },
+       {
+        "Id": "2232089871",
+        "Name": "IsFallingFalse",
+        "ObjectPath": "\\States\\Default Work Unit\\IsFalling\\IsFallingFalse",
+        "GUID": "{7329F6D0-4027-4989-9739-ACDB1C81A4B6}"
+       },
+       {
+        "Id": "4128336750",
+        "Name": "IsFallingTrue",
+        "ObjectPath": "\\States\\Default Work Unit\\IsFalling\\IsFallingTrue",
+        "GUID": "{129AD3C9-5912-41E1-B5B5-8AAAF3E164E5}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{90983377-077B-006C-9133-4F8DB01D59F2}"
+  "FileHash": "{A0D67B32-6C47-203E-4D45-C80A6DBD274E}"
  }
 }

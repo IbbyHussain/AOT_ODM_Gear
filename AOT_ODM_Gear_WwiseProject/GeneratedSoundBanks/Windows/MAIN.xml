@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
 	<SoundBanks>
-		<SoundBank Id="3161908922" Type="User" GUID="{7AD7ACCE-D85A-47C3-91F6-7E6434110932}" Language="SFX" Hash="{15365AAE-EAF6-97E3-81C6-29A80718583A}">
+		<SoundBank Id="3161908922" Type="User" GUID="{7AD7ACCE-D85A-47C3-91F6-7E6434110932}" Language="SFX" Hash="{359698D6-0524-CF7A-DB18-98601CDC65FE}">
 			<ObjectPath>\SoundBanks\Default Work Unit\MAIN</ObjectPath>
 			<ShortName>MAIN</ShortName>
 			<Path>MAIN.bnk</Path>
@@ -12,7 +12,7 @@
 				</File>
 				<File Id="675338252" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BassGuitarZips_SlinkySwings.WAV</ShortName>
-					<CachePath>SFX/BassGuitarZips_SlinkySwings_42B4734B.wem</CachePath>
+					<CachePath>SFX/BassGuitarZips_SlinkySwings_03D47622.wem</CachePath>
 				</File>
 				<File Id="829410983" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WindLoop.wav</ShortName>
@@ -32,15 +32,20 @@
 				<Event Id="1703472526" Name="Grapple" ObjectPath="\Events\Default Work Unit\Grapple" GUID="{EABFBB9A-B445-419A-A420-2DD30DF3A10B}" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="481454921"/>
-						<MediaRef Id="829410983"/>
 						<MediaRef Id="882002448"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1537061107" Name="Wind" ObjectPath="\Events\Default Work Unit\Wind" GUID="{BE464623-FE89-4B59-A65E-027930A7175A}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="829410983"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="58042747" Name="FallSpeed" ObjectPath="\Game Parameters\Default Work Unit\FallSpeed" GUID="{AC8799C0-709A-4A93-AD7E-D6320FE11CBF}"/>
 				<GameParameter Id="3922339807" Name="GrappleSpeed" ObjectPath="\Game Parameters\Default Work Unit\GrappleSpeed" GUID="{FED5E64F-DADF-47B6-AFAE-ED13B06C400E}"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{CD0C797E-07F4-22AA-FF91-6B3433EB3D5B}</FileHash>
+	<FileHash>{71D0A86A-0601-37CC-9F5E-62861E677041}</FileHash>
 </SoundBanksInfo>

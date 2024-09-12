@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{0C4D8ED7-ECB1-4985-AD36-15AE61AC87F6}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{0C4D8ED7-ECB1-4985-AD36-15AE61AC87F6}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{0C4D8ED7-ECB1-4985-AD36-15AE61AC87F6}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="IsFalling" ID="{14283B8E-747D-431C-83E4-D57EFD591D3F}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{858BB978-2200-478F-83D9-2F04763123F5}"/>
+						<State Name="IsFallingTrue" ID="{129AD3C9-5912-41E1-B5B5-8AAAF3E164E5}"/>
+						<State Name="IsFallingFalse" ID="{7329F6D0-4027-4989-9739-ACDB1C81A4B6}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

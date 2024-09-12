@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{7AD7ACCE-D85A-47C3-91F6-7E6434110932}",
     "Language": "SFX",
-    "Hash": "{15365AAE-EAF6-97E3-81C6-29A80718583A}",
+    "Hash": "{359698D6-0524-CF7A-DB18-98601CDC65FE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MAIN",
     "ShortName": "MAIN",
     "Path": "MAIN.bnk",
@@ -29,7 +29,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "BassGuitarZips_SlinkySwings.WAV",
-      "CachePath": "SFX/BassGuitarZips_SlinkySwings_42B4734B.wem"
+      "CachePath": "SFX/BassGuitarZips_SlinkySwings_03D47622.wem"
      },
      {
       "Id": "829410983",
@@ -73,15 +73,30 @@
         "Id": "481454921"
        },
        {
-        "Id": "829410983"
-       },
-       {
         "Id": "882002448"
+       }
+      ]
+     },
+     {
+      "Id": "1537061107",
+      "Name": "Wind",
+      "ObjectPath": "\\Events\\Default Work Unit\\Wind",
+      "GUID": "{BE464623-FE89-4B59-A65E-027930A7175A}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "829410983"
        }
       ]
      }
     ],
     "GameParameters": [
+     {
+      "Id": "58042747",
+      "Name": "FallSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\FallSpeed",
+      "GUID": "{AC8799C0-709A-4A93-AD7E-D6320FE11CBF}"
+     },
      {
       "Id": "3922339807",
       "Name": "GrappleSpeed",
@@ -91,6 +106,6 @@
     ]
    }
   ],
-  "FileHash": "{18097E2B-94F5-EEBA-C997-460617E11F0C}"
+  "FileHash": "{8B50EE4C-9225-FD99-CDC9-125C7AA271C6}"
  }
 }

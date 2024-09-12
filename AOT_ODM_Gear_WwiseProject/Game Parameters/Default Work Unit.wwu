@@ -5,9 +5,14 @@
 			<ChildrenList>
 				<GameParameter Name="GrappleSpeed" ID="{FED5E64F-DADF-47B6-AFAE-ED13B06C400E}">
 					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
 						<Property Name="Max" Type="Real64" Value="3500"/>
-						<Property Name="SlewRateDown" Type="Real64" Value="33"/>
-						<Property Name="SlewRateUp" Type="Real64" Value="73"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="FallSpeed" ID="{AC8799C0-709A-4A93-AD7E-D6320FE11CBF}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="3500"/>
 					</PropertyList>
 				</GameParameter>
 			</ChildrenList>
